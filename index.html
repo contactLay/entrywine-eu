@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover premium Moldovan wines and authentic wine tourism experiences. From award-winning reds to refreshing non-alcoholic options.">
+    <title>EntryWine - Discover Moldova's Finest Wines</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1600') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        section {
+            padding: 6rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        section .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 4rem;
+        }
+
+        /* Wine Grid */
+        .wine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .wine-card {
+            background: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .wine-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .wine-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+
+        .wine-info {
+            padding: 2rem;
+        }
+
+        .wine-info h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: #2c1810;
+        }
+
+        .wine-info .variety {
+            color: #8b4513;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .wine-info p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #f0e68c;
+            color: #2c1810;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* Tourism Section */
+        .tourism {
+            background: #f9f9f9;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .experience-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+
+        .experience-info {
+            padding: 1.5rem;
+        }
+
+        .experience-info h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-info p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .rating {
+            color: #ff9800;
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Form */
+        .contact {
+            background: #2c1810;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact .subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background: white;
+            color: #2c1810;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .wine-grid, .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Discover Moldova</h1>
+            <p>Premium wines and authentic experiences</p>
+        </div>
+    </div>
+
+    <!-- Wine Selection -->
+    <section>
+        <div class="container">
+            <h2>Our Selection</h2>
+            <p class="subtitle">From bold reds to refreshing non-alcoholic options</p>
+
+            <div class="wine-grid">
+                <!-- Wine 1 -->
+                <div class="wine-card">
+                    <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32d6?w=800" alt="Rara Neagră" class="wine-image">
+                    <div class="wine-info">
+                        <div class="variety">Red Wine</div>
+                        <h3>Rara Neagră Reserve</h3>
+                        <p>An authentic Moldovan varietal with rich berry flavors and elegant tannins. Aged 18 months in French oak.</p>
+                        <span class="badge">Award Winner 2025</span>
+                    </div>
+                </div>
+
+                <!-- Wine 2 -->
+                <div class="wine-card">
+                    <img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=800" alt="Fetească Albă" class="wine-image">
+                    <div class="wine-info">
+                        <div class="variety">White Wine</div>
+                        <h3>Fetească Albă</h3>
+                        <p>Crisp and aromatic white with notes of white flowers, green apple, and citrus. Perfect with seafood.</p>
+                    </div>
+                </div>
+
+                <!-- Wine 3 - Non-Alcoholic -->
+                <div class="wine-card">
+                    <img src="https://images.unsplash.com/photo-1598724438461-fccf0bc7f46a?w=800" alt="Non-Alcoholic Sparkling" class="wine-image">
+                    <div class="wine-info">
+                        <div class="variety">Non-Alcoholic</div>
+                        <h3>Sparkling Grape Elixir</h3>
+                        <p>Sophisticated non-alcoholic option with natural grape essence. All the celebration, zero alcohol.</p>
+                        <span class="badge">0.0% Alcohol</span>
+                    </div>
+                </div>
+
+                <!-- Wine 4 -->
+                <div class="wine-card">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800" alt="Cabernet Sauvignon" class="wine-image">
+                    <div class="wine-info">
+                        <div class="variety">Red Wine</div>
+                        <h3>Cabernet Sauvignon</h3>
+                        <p>Full-bodied classic with blackcurrant, cedar, and tobacco notes. A timeless choice for any occasion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tourism Section -->
+    <section class="tourism">
+        <div class="container">
+            <h2>Wine Tourism</h2>
+            <p class="subtitle">Experience Moldova's rich wine heritage</p>
+
+            <div class="experience-grid">
+                <!-- Experience 1 -->
+                <div class="experience-card">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Vineyard Tour" class="experience-image">
+                    <div class="experience-info">
+                        <h3>Vineyard Tours</h3>
+                        <p>Walk through centuries-old vineyards and discover traditional winemaking methods passed down through generations.</p>
+                        <div class="rating">★★★★★ 4.9 (127 reviews)</div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="experience-card">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800" alt="Wine Cellar" class="experience-image">
+                    <div class="experience-info">
+                        <h3>Underground Cellars</h3>
+                        <p>Explore the legendary Mileștii Mici cellars - over 200km of underground wine tunnels holding 1.5 million bottles.</p>
+                        <div class="rating">★★★★★ 5.0 (203 reviews)</div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="experience-card">
+                    <img src="https://images.unsplash.com/photo-1528823872057-9c018a7a7553?w=800" alt="Wine Tasting" class="experience-image">
+                    <div class="experience-info">
+                        <h3>Tasting Sessions</h3>
+                        <p>Intimate tastings with master sommeliers. Learn to identify varietals and discover your perfect wine match.</p>
+                        <div class="rating">★★★★★ 4.8 (89 reviews)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p class="subtitle">Interested in our wines or planning a visit? We'd love to hear from you.</p>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interest">Interest</label>
+                    <input type="text" id="interest" name="interest" placeholder="Wine purchase, tourism, partnership...">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us more about your interest..." required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 EntryWine | Chișinău, Moldova</p>
+            <p><a href="mailto:info@entrywine.eu">info@entrywine.eu</a></p>
+        </div>
+    </footer>
+</body>
+</html>
